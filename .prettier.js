@@ -14,4 +14,16 @@ module.exports = {
     },
   ],
   arrowParens: "always",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "yarn lint",
+      "prettier --write",
+      "git add"
+    ]
+  }
 };
